@@ -8,7 +8,6 @@ class AirbenderService
 
   def get_json(url)
     response = conn.get(url)
-    binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
 end
