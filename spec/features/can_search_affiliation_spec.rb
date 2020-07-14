@@ -4,8 +4,7 @@ describe 'A affiliation' do
     search = AirbenderSearch.new
     visit "/"
     select "Fire Nation"
-    click_on "Search For Members"
+    click_button 'Search For Members'
     expect(page).to have_content("Azula")
-
   end
 end
