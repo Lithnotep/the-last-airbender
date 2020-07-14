@@ -1,10 +1,9 @@
 class AirbenderSearch
 
-  def characters(affiliation)
+  def characters
     service = AirbenderService.new
-    json = service.get_json("characters?affiliation=#{affiliation}")
+    json = service.get_json("characters?affiliation=Fire Nation")
     json.map do |data|
-        binding.pry
       Character.new(data)
     end
   end

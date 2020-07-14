@@ -1,7 +1,6 @@
 class Character
   attr_reader :id, :allies, :enemies, :photo, :name, :affiliation
   def initialize(data)
-    binding.pry
     @id = data[:_id]
     @allies = data[:allies]
     @enemies = data[:enemies]
