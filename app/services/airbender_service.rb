@@ -1,14 +1,14 @@
 class AirbenderService
 
   def conn
-    Faraday.new(url: "https://last-airbender-api.herokuapp.com/") do |faraday|
-    faraday.params
+    Faraday.new(url: "https://last-airbender-api.herokuapp.com/api/v1") do |faraday|
+    faraday.adapter Faraday.default_adapter
     end
   end
 
-  def get_json(params)
+  def get_json(url)
+    response = conn.get(url)
     binding.pry
-    response = conn.get(params)
     JSON.parse(response.body, symbolize_names: true)
   end
 end
